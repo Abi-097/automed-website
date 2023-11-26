@@ -1,0 +1,10 @@
+@media screen and (max-width: 1200px) {
+  .navbar_hide {
+    display: none;
+  }
+}
+
+.navbar_hide {
+  color: #656c9a;
+  cursor: pointer;
+}
