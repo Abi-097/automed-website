@@ -19,6 +19,12 @@ import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import Grid from "@mui/material/Unstable_Grid2";
+import HomeIcon from "@mui/icons-material/Home";
+import InfoIcon from "@mui/icons-material/Info";
+import WorkIcon from "@mui/icons-material/Work";
+import ChatIcon from "@mui/icons-material/Chat";
+import BookIcon from "@mui/icons-material/Book";
+import ContactMailIcon from "@mui/icons-material/ContactMail";
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
@@ -47,7 +53,6 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   alignItems: "center",
   justifyContent: "flex-end",
   padding: theme.spacing(0, 1),
-  // necessary for content to be below app bar
   ...theme.mixins.toolbar,
 }));
 
@@ -59,8 +64,8 @@ const AppBar = styled(MuiAppBar, {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
   }),
-  background: "transparent", // Make the AppBar transparent
-  boxShadow: "none", // Remove the shadow
+  background: "transparent",
+  boxShadow: "none",
 
   ...(open && {
     marginLeft: drawerWidth,
@@ -134,28 +139,59 @@ export default function Sidebar() {
         </DrawerHeader>
         <Divider />
         <List>
-          {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-            <ListItem key={text} disablePadding sx={{ display: "block" }}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? "initial" : "center",
-                  px: 2.5,
-                }}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : "auto",
-                    justifyContent: "center",
-                  }}
-                >
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
-            </ListItem>
-          ))}
+          {["Home", "About", "Services", "Testimonial", "Blog", "Contact"].map(
+            (text, index) => {
+              let iconComponent;
+              switch (text) {
+                case "Home":
+                  iconComponent = <HomeIcon />;
+                  break;
+                case "About":
+                  iconComponent = <InfoIcon />;
+                  break;
+                case "Services":
+                  iconComponent = <WorkIcon />;
+                  break;
+                case "Testimonial":
+                  iconComponent = <ChatIcon />;
+                  break;
+                case "Blog":
+                  iconComponent = <BookIcon />;
+                  break;
+                case "Contact":
+                  iconComponent = <ContactMailIcon />;
+                  break;
+                default:
+                  iconComponent = <InboxIcon />;
+                  break;
+              }
+              return (
+                <ListItem key={text} disablePadding sx={{ display: "block" }}>
+                  <ListItemButton
+                    sx={{
+                      minHeight: 48,
+                      justifyContent: open ? "initial" : "center",
+                      px: 2.5,
+                    }}
+                  >
+                    <ListItemIcon
+                      sx={{
+                        minWidth: 0,
+                        mr: open ? 3 : "auto",
+                        justifyContent: "center",
+                      }}
+                    >
+                      {iconComponent}
+                    </ListItemIcon>
+                    <ListItemText
+                      primary={text}
+                      sx={{ opacity: open ? 1 : 0 }}
+                    />
+                  </ListItemButton>
+                </ListItem>
+              );
+            }
+          )}
         </List>
       </Drawer>
     </Box>

@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./App.css";
 // import "react-pro-sidebar/dist/css/styles.css";
-import Sidebar from "./test";
+import Sidebar from "./Components/Features/Sidebar/Index";
 import { faHouseChimney } from "@fortawesome/free-solid-svg-icons";
 import Navbar from "./Components/Features/Navbar/navbar";
 import Footer from "./Components/Features/Footer/Index";
