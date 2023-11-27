@@ -17,13 +17,41 @@ const Choose = () => {
           m: 5,
         }}
       >
-        <Grid xs={6}>
+        <Grid
+          xs={12}
+          md={6}
+          sm={12}
+          lg={6}
+          sx={{
+            order: {
+              xs: 2,
+              lg: 1,
+              md: 1,
+              sm: 2,
+            },
+          }}
+        >
           <img src={choose} width="450px" height="450px" />
         </Grid>
         <Grid
           item
-          xs={6}
+          xs={12}
+          md={6}
+          sm={12}
+          lg={6}
           sx={{
+            order: {
+              xs: 1,
+              md: 2,
+              lg: 2,
+              sm: 1,
+            },
+            ml: {
+              xs: 5,
+              md: 0,
+              lg: 0,
+              sm: 5,
+            },
             display: "flex",
             flexDirection: "column",
             justifyContent: "flex-start",

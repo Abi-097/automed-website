@@ -9,14 +9,16 @@ import ContactUs from "./Components/Features/ContactUs/Index";
 import CustomerReview from "./Components/Features/CustomerReview/Index";
 import Choose from "./Components/Features/Choose";
 import Services from "./Components/Features/Services/Index";
+import AutoService from "./Components/Features/Autoservice/Index";
 function App() {
   // const { collapseSidebar } = useProSidebar();
   return (
     <div className="App">
       <Navbar />
       <Sidebar />
-      <Choose />
+      <AutoService />
       <Services />
+      <Choose />
       <CustomerReview />
       <ContactUs />
       <Footer />

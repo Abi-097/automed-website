@@ -14,7 +14,7 @@ import "./Style.css";
 
 const Navbar = () => {
   const navbarStyle = {
-    backgroundColor: "#f0f0f0",
+    backgroundColor: "#E0E0E0",
     padding: "10px 20px",
   };
 
@@ -33,10 +33,14 @@ const Navbar = () => {
     justifyContent: "space-between",
     alignItems: "center",
     marginLeft: "10%",
-    backgroundImage: "url('../../Images/left_top.png')", // Set your background image path here
+    padding: "10px",
+    cursor: "pointer",
+  };
+
+  const logoStyle = {
+    backgroundImage: "url('../../Images/left_top.png')",
     backgroundSize: "cover",
     backgroundPosition: "center",
-    padding: "10px", // Add padding to create space around the logo
   };
 
   const navbarItemStyle = {
@@ -53,7 +57,7 @@ const Navbar = () => {
       <nav style={navbarStyle}>
         <div style={navbarContainerStyle}>
           <div style={navbarItemStyle1}>
-            <img src={logo} />
+            <img src={logo} alt="Logo" style={logoStyle} />
           </div>
           <div style={navbarItemStyle}>
             <div style={{ marginRight: "5px" }}>

@@ -6,7 +6,6 @@ import CardContent from "@mui/material/CardContent";
 import Avatar from "@mui/material/Avatar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import { red } from "@mui/material/colors";
 import { Paper } from "@mui/material";
 import { Grid } from "@mui/material";
 import client from "../../Images/clint2.png";
@@ -55,14 +54,14 @@ const CustomerReview = () => {
     );
   };
 
-  // Function to handle navigation to the next page
+  // navigation to the next page
   const goToNextPage = () => {
     setCurrentPage((prevPage) =>
       prevPage === totalPages - 1 ? 0 : prevPage + 1
     );
   };
 
-  // Calculate the range of items to display based on the current page
+  // Calculate the range of items
   const startIndex = currentPage * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
 
@@ -116,7 +115,7 @@ const CustomerReview = () => {
                       </Avatar>
                     }
                     titleTypographyProps={{
-                      variant: "h5", // Change the variant to adjust the font size
+                      variant: "h5",
                       sx: {
                         fontSize: "24px",
                         fontWeight: 500,

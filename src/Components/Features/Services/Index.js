@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Card, CardMedia, makeStyles, Box } from "@mui/material";
+import { Grid, Box } from "@mui/material";
 import cho from "../../Images/cho1.png";
 import cho1 from "../../Images/cho2.png";
 import cho3 from "../../Images/cho3.3.png";
@@ -8,18 +8,10 @@ import logo from "../../Images/heading.png";
 import "./Style.css";
 import CustomButton from "../../Component/Button/Index";
 
-const Services = ({ lg }) => {
-  //   const classes = useStyles();
-  //   const images = [
-  //     { src: {"image1.jpg"} },
-  //     { src: "image2.jpg" },
-  //     { src: "image3.jpg" },
-  //     { src: "image4.jpg" },
-  //   ];
-
+const Services = () => {
   return (
     <div>
-      <Box>
+      <Box sx={{ mt: 3 }}>
         <div className="service_heading">
           <img src={logo} alt="logo" width="75px" height="75px" />
           <h2>OUR SERVICES</h2>
@@ -34,7 +26,19 @@ const Services = ({ lg }) => {
             alignItems: "center",
           }}
         >
-          <Grid item xs={12} md={2} lg={2} sm={6}>
+          <Grid
+            item
+            xs={12}
+            md={2}
+            lg={2}
+            sm={6}
+            sx={{
+              marginBottom: {
+                lg: 20,
+                md: 20,
+              },
+            }}
+          >
             <img src={cho1} alt="Image 1" className="service_image" />
             <h3>AIR CONDITIONING</h3>
             <p>
@@ -56,7 +60,8 @@ const Services = ({ lg }) => {
             lg={2}
             sx={{
               marginTop: {
-                lg: 15,
+                lg: 20,
+                md: 20,
               },
             }}
           >
@@ -74,7 +79,19 @@ const Services = ({ lg }) => {
             />
           </Grid>
 
-          <Grid item xs={12} md={2} sm={6} lg={2}>
+          <Grid
+            item
+            xs={12}
+            md={2}
+            sm={6}
+            lg={2}
+            sx={{
+              marginBottom: {
+                lg: 20,
+                md: 20,
+              },
+            }}
+          >
             <img src={cho} alt="Image 1" className="service_image" />
             <h3>ELECTRICAL SYSTEM</h3>
             <p>
@@ -91,11 +108,13 @@ const Services = ({ lg }) => {
           <Grid
             item
             xs={12}
+            sm={6}
             md={2}
             lg={2}
             sx={{
               marginTop: {
-                lg: 15,
+                lg: 20,
+                md: 20,
               },
             }}
           >
