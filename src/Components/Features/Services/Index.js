@@ -65,7 +65,6 @@ const Services = () => {
               },
             }}
           >
-            {/* <Box sx={{ display: "flex", justifyContent: "center" }}> */}
             <img src={cho3} alt="Image 3" className="service_image" />
             <h3>AUTOMOTIVE FILTERS</h3>
             <p>

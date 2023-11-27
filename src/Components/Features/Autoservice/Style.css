@@ -7,7 +7,7 @@
   justify-content: center;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1210px) {
   .auto_bg {
     background-image: url("../../Images/square.JPG");
   }

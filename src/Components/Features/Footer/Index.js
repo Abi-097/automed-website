@@ -18,16 +18,10 @@ import {
   faLinkedin,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
+
 const Footer = () => {
   const [isHovered, setIsHovered] = useState(false);
 
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-  };
   return (
     <footer>
       <Box className="main_box">
@@ -89,12 +83,6 @@ const Footer = () => {
               </div>
               <div style={{ fontSize: "14px" }}>demo@gmail.com</div>
             </div>
-            {/* <div style={navbarItemStyle}>
-            <div style={{ marginRight: "5px" }}>
-              <FontAwesomeIcon icon={faEnvelope} />
-            </div>
-            <div style={navbarTextStyle}>demo@gmail.com</div>
-          </div> */}
           </Grid>
           <Grid lg={3} xs={12} className="footer_context2">
             <Box
@@ -117,7 +105,6 @@ const Footer = () => {
                   minWidth: 0,
                   width: "100px",
                   border: "4px solid white",
-                  //   overflow: "hidden",
                 }}
               >
                 <FontAwesomeIcon icon={faMagnifyingGlass} />
@@ -128,11 +115,11 @@ const Footer = () => {
         <Box
           className="google-map-container"
           sx={{
-            width: "100%", // Adjust the width as needed
-            height: "300px", // Adjust the height as needed
+            width: "100%",
+            height: "300px",
           }}
         >
-          {/* Embedding the Google Maps location URL using iframe */}
+          {/* Google Maps location */}
           <iframe
             title="Google Map"
             src="https://www.google.com/maps/@6.8456365,79.8632725,15z?entry=ttu"
@@ -146,8 +133,8 @@ const Footer = () => {
         <Box
           className="google-map-container"
           sx={{
-            width: "100%", // Adjust the width as needed
-            height: "100px", // Adjust the height as needed
+            width: "100%",
+            height: "100px",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -166,18 +153,6 @@ const Footer = () => {
               <p>© 2022 All Rights Reserved. </p>
             </Grid>
             <Grid lg={6} md={6} sm={12} xs={12} className="footer_context4">
-              {/* <Grid container>
-                <Grid>
-                  <FontAwesomeIcon icon={faFacebook} />
-                </Grid>
-                <Grid>
-                <FontAwesomeIcon icon={faInstagram} />
-                </Grid>
-                <Grid>
-                <FontAwesomeIcon icon={faTwitter} />
-                </Grid>
-                <Grid></Grid>
-              </Grid> */}
               <div style={{ display: "flex", justifyContent: "center" }}>
                 <div>
                   <FontAwesomeIcon
@@ -193,8 +168,6 @@ const Footer = () => {
                     className={
                       isHovered ? "footer_icons hovered" : "footer_icons"
                     }
-                    // onMouseEnter={handleMouseEnter}
-                    // onMouseLeave={handleMouseLeave}
                   />
                 </div>
                 <div>
@@ -204,8 +177,6 @@ const Footer = () => {
                     className={
                       isHovered ? "footer_icons hovered" : "footer_icons"
                     }
-                    // onMouseEnter={handleMouseEnter}
-                    // onMouseLeave={handleMouseLeave}
                   />
                 </div>
                 <div>
@@ -215,8 +186,6 @@ const Footer = () => {
                     className={
                       isHovered ? "footer_icons hovered" : "footer_icons"
                     }
-                    // onMouseEnter={handleMouseEnter}
-                    // onMouseLeave={handleMouseLeave}
                   />
                 </div>
               </div>

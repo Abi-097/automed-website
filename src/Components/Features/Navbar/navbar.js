@@ -1,5 +1,4 @@
 import React from "react";
-import Grid from "@mui/material/Unstable_Grid2";
 import logo from "../../Images/automed.png";
 import { InputBase } from "@mui/material";
 import { Box, IconButton } from "@mui/material";
@@ -25,10 +24,6 @@ const Navbar = () => {
   };
 
   const navbarItemStyle1 = {
-    // display: "flex",
-    // justifyContent: "space-between",
-    // alignItems: "center",
-    // marginLeft: "10%",
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
@@ -98,7 +93,6 @@ const Navbar = () => {
                   <FontAwesomeIcon icon={faMagnifyingGlass} />
                 </IconButton>
               </Box>
-              {/* <FontAwesomeIcon icon={faMagnifyingGlass} /> */}
             </div>
           </div>
         </div>

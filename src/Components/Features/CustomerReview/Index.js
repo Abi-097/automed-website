@@ -145,12 +145,12 @@ const CustomerReview = () => {
               justifyContent: "center",
             }}
           >
-            <Grid item>
+            <Grid item sx={{ mt: 3 }}>
               <IconButton onClick={goToPreviousPage}>
                 <FontAwesomeIcon icon={faChevronLeft} size="xl" />
               </IconButton>
             </Grid>
-            <Grid item>
+            <Grid item sx={{ mt: 3 }}>
               <IconButton onClick={goToNextPage}>
                 <FontAwesomeIcon icon={faChevronRight} size="xl" />
               </IconButton>

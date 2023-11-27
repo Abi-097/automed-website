@@ -22,7 +22,6 @@ const CustomButton = ({
     color: textColor || "white",
     transition: "background-color 1s",
     "&:hover": {
-      // background: "#636c9a",
       background: hoverBackground || background,
       color: hoverTextColor || color,
     },
