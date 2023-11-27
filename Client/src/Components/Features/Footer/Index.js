@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Grid from "@mui/material/Unstable_Grid2";
 import Box from "@mui/material/Box";
 import logo from "../../Images/automed.png";
-import { Loader, LoaderOptions } from "google-maps";
+// import { Loader, LoaderOptions } from "google-maps";
 import {
   faEnvelope,
   faMagnifyingGlass,
@@ -122,7 +122,7 @@ const Footer = () => {
           {/* Google Maps location */}
           <iframe
             title="Google Map"
-            src="https://www.google.com/maps/@6.8456365,79.8632725,15z?entry=ttu"
+            // src="https://www.google.com/maps/@6.8456365,79.8632725,15z?entry=ttu"
             width="100%"
             height="100%"
             allowFullScreen=""
