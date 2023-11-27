@@ -5,17 +5,19 @@ import { Grid, TextField } from "@mui/material";
 import contact from "../../Images/contact.png";
 import axios from "axios";
 import "./Style.css";
+
 const ContactUs = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    phoneNumber: "",
-    message: "",
   });
 
   const handleChange = (e) => {
     const { id, value } = e.target;
-    setFormData({ ...formData, [id]: value });
+    setFormData((prevData) => ({
+      ...prevData,
+      [id]: value,
+    }));
   };
 
   const handleSubmit = (e) => {
@@ -23,7 +25,7 @@ const ContactUs = () => {
     axios
       .post("http://localhost:4000/postDetails", formData)
       .then((response) => {
-        console.log("Data posted successfully:", response.data);
+        console.log("Data posted:", response.data);
       })
       .catch((error) => {
         console.error("Error posting data:", error);
@@ -46,12 +48,13 @@ const ContactUs = () => {
           <Grid container direction="column" spacing={2}>
             <Grid item>
               <TextField
+                id="name"
                 label="Name"
+                value={formData.name}
+                onChange={handleChange}
                 defaultValue=""
                 variant="standard"
                 sx={{ width: "400px" }}
-                onChange={handleChange}
-                value={formData.name}
               />
             </Grid>
             <Grid item>
@@ -59,9 +62,9 @@ const ContactUs = () => {
                 label="Email"
                 defaultValue=""
                 variant="standard"
-                sx={{ width: "400px" }}
-                onChange={handleChange}
                 value={formData.email}
+                onChange={handleChange}
+                sx={{ width: "400px" }}
               />
             </Grid>
             <Grid item>
@@ -70,8 +73,6 @@ const ContactUs = () => {
                 defaultValue=""
                 variant="standard"
                 sx={{ width: "400px", mb: 5 }}
-                onChange={handleChange}
-                value={formData.phoneNumber}
               />
             </Grid>
             <Grid item>
@@ -80,16 +81,10 @@ const ContactUs = () => {
                 defaultValue=""
                 variant="standard"
                 sx={{ width: "400px", mb: 5 }}
-                // onChange={handleChange}
-                value={formData.message}
               />
             </Grid>
             <div className="contact_Send">
-              <CustomButton
-                variant="contained"
-                text="Send"
-                onClick={handleSubmit}
-              />
+              <CustomButton variant="contained" text="Send" type="submit" />
             </div>
           </Grid>
         </Grid>
