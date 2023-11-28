@@ -3,7 +3,8 @@ import React, { useState } from "react";
 import Grid from "@mui/material/Unstable_Grid2";
 import Box from "@mui/material/Box";
 import logo from "../../Images/automed.png";
-// import { Loader, LoaderOptions } from "google-maps";
+import GoogleMapReact from "google-map-react";
+// import MapComponent from "./MapComponent";
 import {
   faEnvelope,
   faMagnifyingGlass,
@@ -19,8 +20,16 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 
-const Footer = () => {
+const Footer = ({ center, zoom }) => {
   const [isHovered, setIsHovered] = useState(false);
+
+  const defaultProps = {
+    center: {
+      lat: 10.99835602,
+      lng: 77.01502627,
+    },
+    zoom: 11,
+  };
 
   return (
     <footer>
@@ -113,25 +122,27 @@ const Footer = () => {
           </Grid>
         </Grid>
         <Box
-          className="google-map-container"
           sx={{
             width: "100%",
-            height: "300px",
+            height: "500px",
           }}
         >
           {/* Google Maps location */}
-          <iframe
-            title="Google Map"
-            // src="https://www.google.com/maps/@6.8456365,79.8632725,15z?entry=ttu"
-            width="100%"
-            height="100%"
-            allowFullScreen=""
-            aria-hidden="false"
-            tabIndex="0"
-          ></iframe>
+          <GoogleMapReact
+            bootstrapURLKeys={{
+              key: "AIzaSyCwEkxb1ZdoxyN3uf8ELq3mZSN_-cI_mlY", // Replace with your actual API key
+            }}
+            defaultCenter={defaultProps.center}
+            defaultZoom={defaultProps.zoom}
+          >
+            <AnyReactComponent
+              lat={59.955413}
+              lng={30.337844}
+              text="My Marker"
+            />
+          </GoogleMapReact>
         </Box>
         <Box
-          className="google-map-container"
           sx={{
             width: "100%",
             height: "100px",
@@ -150,7 +161,7 @@ const Footer = () => {
             }}
           >
             <Grid lg={6} md={6} sm={12} xs={12} className="footer_context3">
-              <p>© 2022 All Rights Reserved. </p>
+              <p> © 2022 All Rights Reserved. </p>
             </Grid>
             <Grid lg={6} md={6} sm={12} xs={12} className="footer_context4">
               <div style={{ display: "flex", justifyContent: "center" }}>
@@ -196,5 +207,6 @@ const Footer = () => {
     </footer>
   );
 };
+const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 export default Footer;
