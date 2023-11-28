@@ -3,8 +3,10 @@ const mongoose = require("mongoose");
 const app = express();
 const Customer = require("./models/customerPost");
 const port = 4000;
-
+const cors = require("cors");
 app.use(express.json());
+
+app.use(cors());
 
 app.post("/postDetails", async (req, res) => {
   try {
@@ -22,7 +24,7 @@ mongoose
   )
   .then(() => {
     app.listen(port, () => {
-      console.log(`Example app listening on port ${port}`);
+      console.log(`Server running on port ${port}`);
     });
 
     console.log("Connected to MongoDb");

@@ -10,6 +10,8 @@ const ContactUs = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
+    message: "",
   });
 
   const handleChange = (e) => {
@@ -22,15 +24,30 @@ const ContactUs = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios
-      .post("http://localhost:4000/postDetails", formData)
+    axios({
+      method: "post",
+      url: "http://localhost:4000/postDetails",
+      data: {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        message: formData.message,
+      },
+    })
       .then((response) => {
-        console.log("Data posted:", response.data);
+        console.log("Data sent:", response.data);
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
       })
       .catch((error) => {
-        console.error("Error posting data:", error);
+        console.error("Error sending data:", error);
       });
   };
+
   return (
     <div>
       <div className="contact_heading">
@@ -50,17 +67,16 @@ const ContactUs = () => {
               <TextField
                 id="name"
                 label="Name"
-                value={formData.name}
                 onChange={handleChange}
-                defaultValue=""
+                value={formData.name}
                 variant="standard"
                 sx={{ width: "400px" }}
               />
             </Grid>
             <Grid item>
               <TextField
+                id="email"
                 label="Email"
-                defaultValue=""
                 variant="standard"
                 value={formData.email}
                 onChange={handleChange}
@@ -69,22 +85,30 @@ const ContactUs = () => {
             </Grid>
             <Grid item>
               <TextField
+                id="phone"
                 label="Phone number"
-                defaultValue=""
+                value={formData.phone}
+                onChange={handleChange}
                 variant="standard"
                 sx={{ width: "400px", mb: 5 }}
               />
             </Grid>
             <Grid item>
               <TextField
+                id="message"
                 label="Message"
-                defaultValue=""
+                value={formData.message}
+                onChange={handleChange}
                 variant="standard"
                 sx={{ width: "400px", mb: 5 }}
               />
             </Grid>
             <div className="contact_Send">
-              <CustomButton variant="contained" text="Send" type="submit" />
+              <CustomButton
+                variant="contained"
+                text="Send"
+                onClick={handleSubmit}
+              />
             </div>
           </Grid>
         </Grid>
