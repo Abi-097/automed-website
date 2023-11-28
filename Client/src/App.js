@@ -7,7 +7,6 @@ import CustomerReview from "./Components/Features/CustomerReview/Index";
 import Choose from "./Components/Features/Choose";
 import Services from "./Components/Features/Services/Index";
 import AutoService from "./Components/Features/Autoservice/Index";
-import React from "react";
 function App() {
   return (
     <div className="App">
