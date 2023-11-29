@@ -10,16 +10,16 @@ import {
   faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
 import "./Style.css";
-
+import Paper from "@mui/material/Paper";
 const Navbar = () => {
   const navbarStyle = {
-    backgroundColor: "#E0E0E0",
+    // backgroundColor: "#E0E0E0",
     padding: "10px 20px",
   };
 
   const navbarContainerStyle = {
     display: "flex",
-    justifyContent: "space-between",
+    justifyContent: "center",
     alignItems: "center",
   };
 
@@ -27,20 +27,17 @@ const Navbar = () => {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    marginLeft: "10%",
+    marginLeft: "15%",
     padding: "10px",
     cursor: "pointer",
-  };
-
-  const logoStyle = {
-    backgroundImage: "url('../../Images/left_top.png')",
-    backgroundSize: "cover",
-    backgroundPosition: "center",
   };
 
   const navbarItemStyle = {
     display: "flex",
     alignItems: "center",
+    // marginLeft: "200px",
+    marginLeft: "100px ",
+    padding: "15px",
   };
 
   const navbarTextStyle = {
@@ -51,9 +48,7 @@ const Navbar = () => {
     <div>
       <nav style={navbarStyle}>
         <div style={navbarContainerStyle}>
-          <div style={navbarItemStyle1}>
-            <img src={logo} alt="Logo" style={logoStyle} />
-          </div>
+          <div style={navbarItemStyle1}> </div>
           <div style={navbarItemStyle}>
             <div style={{ marginRight: "5px" }}>
               <FontAwesomeIcon icon={faPhone} className="navbar_hide" />
@@ -79,24 +74,18 @@ const Navbar = () => {
             </div>
           </div>
           <div style={navbarItemStyle}>
-            <div style={{ marginRight: "5px" }}>
-              <Box
-                display="flex"
-                backgroundColor={"#858585"}
-                borderRadius="4px"
-              >
-                <InputBase
-                  sx={{ ml: 2, mr: 2, flex: 1 }}
-                  placeholder="Search"
-                />
-                <IconButton type="button" sx={{ p: 1 }}>
-                  <FontAwesomeIcon icon={faMagnifyingGlass} />
-                </IconButton>
-              </Box>
-            </div>
+            <Box display="flex" backgroundColor={"#858585"} borderRadius="4px">
+              <InputBase sx={{ ml: 2, mr: 2, flex: 1 }} placeholder="Search" />
+              <IconButton type="button" sx={{ p: 1 }}>
+                <FontAwesomeIcon icon={faMagnifyingGlass} />
+              </IconButton>
+            </Box>
           </div>
         </div>
       </nav>
+      <Paper elevation={0} className="navbar_logo">
+        <img src={logo} alt="Logo" className="navbar_image" />
+      </Paper>
     </div>
   );
 };

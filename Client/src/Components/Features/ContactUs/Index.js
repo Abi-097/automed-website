@@ -36,12 +36,6 @@ const ContactUs = () => {
     })
       .then((response) => {
         console.log("Data sent:", response.data);
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          message: "",
-        });
       })
       .catch((error) => {
         console.error("Error sending data:", error);
@@ -77,8 +71,8 @@ const ContactUs = () => {
               <TextField
                 id="email"
                 label="Email"
-                variant="standard"
                 value={formData.email}
+                variant="standard"
                 onChange={handleChange}
                 sx={{ width: "400px" }}
               />
@@ -108,6 +102,7 @@ const ContactUs = () => {
                 variant="contained"
                 text="Send"
                 onClick={handleSubmit}
+                type="button"
               />
             </div>
           </Grid>

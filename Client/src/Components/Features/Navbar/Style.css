@@ -1,4 +1,4 @@
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1306px) {
   .navbar_hide {
     display: none;
   }
@@ -7,4 +7,19 @@
 .navbar_hide {
   color: #656c9a;
   cursor: pointer;
+}
+
+.navbar_logo {
+  background: url("../../Images/left_top.png");
+  height: 252px;
+  width: 380px;
+  top: 0px;
+  left: 0px;
+  z-index: 9;
+  position: absolute;
+  padding: 0% !important;
+}
+
+.navbar_image {
+  margin-top: 15px;
 }

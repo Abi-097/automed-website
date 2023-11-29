@@ -4,7 +4,6 @@ import Grid from "@mui/material/Unstable_Grid2";
 import Box from "@mui/material/Box";
 import logo from "../../Images/automed.png";
 import GoogleMapReact from "google-map-react";
-// import MapComponent from "./MapComponent";
 import {
   faEnvelope,
   faMagnifyingGlass,

@@ -6,7 +6,7 @@ import image from "../../Images/imf.png";
 const AutoService = () => {
   return (
     <div>
-      <Grid container sx={{ mt: 3 }}>
+      <Grid container sx={{ mt: 17 }}>
         <Grid item lg={6} md={6} xs={12}>
           <img src={image} width="100%" />
         </Grid>
