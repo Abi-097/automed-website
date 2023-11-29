@@ -91,13 +91,30 @@ const CustomerReview = () => {
             }}
           >
             {displayedData.map((item, index) => (
-              <Grid item lg={5} md={6} xs={12} key={index}>
+              <Grid
+                item
+                lg={5}
+                md={5}
+                sm={12}
+                xs={12}
+                key={index}
+                sx={{
+                  ml: {
+                    sm: 10,
+                    xs: 10,
+                  },
+                  mr: {
+                    sm: 2,
+                    xs: 2,
+                  },
+                }}
+              >
                 <Card
                   sx={{
                     width: "100%",
                     height: 250,
-                    transition: "transform 0.5s ease-in-out",
-                    transform: `translateX(${(index - currentPage) * 3}%)`,
+                    transition: "transform 0.5s ease-in",
+                    transform: `translateX(${(index - currentPage) * 0}%)`,
                   }}
                 >
                   <CardHeader
