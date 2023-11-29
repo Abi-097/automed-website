@@ -14,8 +14,21 @@ const ContactUs = () => {
     message: "",
   });
 
+  const [emailError, setEmailError] = useState("");
+
   const handleChange = (e) => {
     const { id, value } = e.target;
+
+    if (id === "email") {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+      if (!emailRegex.test(value)) {
+        setEmailError("Please enter a valid email address");
+      } else {
+        setEmailError("");
+      }
+    }
+
     setFormData((prevData) => ({
       ...prevData,
       [id]: value,
@@ -72,6 +85,8 @@ const ContactUs = () => {
                 id="email"
                 label="Email"
                 value={formData.email}
+                // error={!!emailError}
+                helperText={emailError}
                 variant="standard"
                 onChange={handleChange}
                 sx={{ width: "400px" }}
