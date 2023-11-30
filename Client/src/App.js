@@ -7,13 +7,8 @@ import CustomerReview from "./Components/Features/CustomerReview/Index";
 import Choose from "./Components/Features/Choose";
 import Services from "./Components/Features/Services/Index";
 import AutoService from "./Components/Features/Autoservice/Index";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Routes,
-} from "react-router-dom";
-import { useRef } from "react";
+import pageUConstruction from "./Components/Features/Construction/index";
+import { Router, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
@@ -26,6 +21,12 @@ function App() {
       <CustomerReview />
       <ContactUs />
       <Footer />
+      <Routes>
+        <Route
+          path="/page-under-construction"
+          element={<pageUConstruction />}
+        />
+      </Routes>
       {/* <Route path="/footer" element={<Footer />} /> */}
     </div>
   );

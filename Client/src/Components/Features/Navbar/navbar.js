@@ -15,28 +15,20 @@ const Navbar = () => {
   const navbarStyle = {
     // backgroundColor: "#E0E0E0",
     padding: "10px 20px",
+    marginLeft: "25%",
   };
 
   const navbarContainerStyle = {
     display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-  };
-
-  const navbarItemStyle1 = {
-    display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    marginLeft: "15%",
-    padding: "10px",
-    cursor: "pointer",
   };
 
   const navbarItemStyle = {
     display: "flex",
     alignItems: "center",
-    // marginLeft: "200px",
-    marginLeft: "100px ",
+    justifyContent: "center",
+    // marginLeft: "100px ",
     padding: "15px",
   };
 
@@ -48,7 +40,7 @@ const Navbar = () => {
     <div>
       <nav style={navbarStyle}>
         <div style={navbarContainerStyle}>
-          <div style={navbarItemStyle1}> </div>
+          {/* <div style={navbarItemStyle1}> </div> */}
           <div style={navbarItemStyle}>
             <div style={{ marginRight: "5px" }}>
               <FontAwesomeIcon icon={faPhone} className="navbar_hide" />
@@ -61,21 +53,40 @@ const Navbar = () => {
             <div style={{ marginRight: "5px" }}>
               <FontAwesomeIcon icon={faLocationDot} className="navbar_hide" />
             </div>
-            <div style={navbarTextStyle} className="navbar_hide">
+
+            <a
+              href="https://www.google.com/maps/place/6%C2%B055'39.5%22N+79%C2%B050'45.1%22E/@6.9276543,79.8409971,17z/data=!3m1!4b1!4m13!1m8!3m7!1s0x3ae2593b8b2c88ff:0x4537fcdaf592ff11!2sGalle+Face,+Colombo!3b1!8m2!3d6.9285775!4d79.84508!16s%2Fg%2F11_rd3scb!3m3!8m2!3d6.927649!4d79.845868?entry=ttu"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="navbar_hide"
+              style={navbarTextStyle}
+            >
               Location
-            </div>
+            </a>
           </div>
           <div style={navbarItemStyle}>
             <div style={{ marginRight: "5px" }}>
               <FontAwesomeIcon icon={faEnvelope} className="navbar_hide" />
             </div>
-            <div style={navbarTextStyle} className="navbar_hide">
+
+            <a
+              href="mailto:demo@gmail.com"
+              className="navbar_hide"
+              style={navbarTextStyle}
+            >
               demo@gmail.com
-            </div>
+            </a>
           </div>
           <div style={navbarItemStyle}>
-            <Box display="flex" backgroundColor={"#858585"} borderRadius="4px">
-              <InputBase sx={{ ml: 2, mr: 2, flex: 1 }} placeholder="Search" />
+            <Box display="flex" backgroundColor={"#858585"} borderRadius={2}>
+              <InputBase
+                sx={{
+                  ml: 2,
+                  mr: 2,
+                  flex: 1,
+                }}
+                placeholder="Search"
+              />
               <IconButton type="button" sx={{ p: 1 }}>
                 <FontAwesomeIcon icon={faMagnifyingGlass} />
               </IconButton>

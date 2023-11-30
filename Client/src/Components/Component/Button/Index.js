@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "@mui/material/Button";
-
+import { Link } from "react-router-dom";
 const CustomButton = ({
   onClick,
   text,
@@ -13,6 +13,7 @@ const CustomButton = ({
   textColor,
   hoverBackground,
   hoverTextColor,
+  to,
 }) => {
   const buttonStyle = {
     height: height || "40px",
@@ -27,9 +28,22 @@ const CustomButton = ({
     },
   };
   return (
-    <Button variant={variant} color={color} onClick={onClick} sx={buttonStyle}>
-      {text}
-    </Button>
+    <>
+      <Link
+        to={to}
+        style={{
+          textDecoration: "none",
+        }}
+      />
+      <Button
+        variant={variant}
+        color={color}
+        onClick={onClick}
+        sx={buttonStyle}
+      >
+        {text}
+      </Button>
+    </>
   );
 };
 
