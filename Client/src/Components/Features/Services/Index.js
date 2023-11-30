@@ -10,7 +10,7 @@ import CustomButton from "../../Component/Button/Index";
 
 const Services = () => {
   return (
-    <div>
+    <div id="our_services">
       <Box sx={{ mt: 3 }}>
         <div className="service_heading">
           <img src={logo} alt="logo" width="75px" height="75px" />

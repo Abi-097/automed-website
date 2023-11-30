@@ -69,7 +69,7 @@ const CustomerReview = () => {
   const displayedData = data.slice(startIndex, endIndex);
 
   return (
-    <div>
+    <div id="customer_response">
       <div className="customer_heading">
         <img src={logo} alt="logo" height="70px" />
         <h2>OUR CUSTOMERS SAYS</h2>

@@ -7,6 +7,14 @@ import CustomerReview from "./Components/Features/CustomerReview/Index";
 import Choose from "./Components/Features/Choose";
 import Services from "./Components/Features/Services/Index";
 import AutoService from "./Components/Features/Autoservice/Index";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Routes,
+} from "react-router-dom";
+import { useRef } from "react";
+
 function App() {
   return (
     <div className="App">
@@ -18,6 +26,7 @@ function App() {
       <CustomerReview />
       <ContactUs />
       <Footer />
+      {/* <Route path="/footer" element={<Footer />} /> */}
     </div>
   );
 }

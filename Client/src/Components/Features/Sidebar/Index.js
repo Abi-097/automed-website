@@ -2,7 +2,6 @@ import * as React from "react";
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import MuiDrawer from "@mui/material/Drawer";
-import MuiAppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -15,13 +14,18 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
-import HomeIcon from "@mui/icons-material/Home";
+// import HomeIcon from "@mui/icons-material/Home";
 import InfoIcon from "@mui/icons-material/Info";
 import WorkIcon from "@mui/icons-material/Work";
 import ChatIcon from "@mui/icons-material/Chat";
 import BookIcon from "@mui/icons-material/Book";
 import ContactMailIcon from "@mui/icons-material/ContactMail";
-
+import CarRepairIcon from "@mui/icons-material/CarRepair";
+import HomeRepairServiceIcon from "@mui/icons-material/HomeRepairService";
+import MiscellaneousServicesIcon from "@mui/icons-material/MiscellaneousServices";
+import AccessibilityNewIcon from "@mui/icons-material/AccessibilityNew";
+import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
@@ -53,27 +57,6 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   ...theme.mixins.toolbar,
 }));
 
-const AppBar = styled(MuiAppBar, {
-  shouldForwardProp: (prop) => prop !== "open",
-})(({ theme, open }) => ({
-  zIndex: theme.zIndex.drawer + 1,
-  transition: theme.transitions.create(["width", "margin"], {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
-  }),
-  background: "transparent",
-  boxShadow: "none",
-
-  ...(open && {
-    marginLeft: drawerWidth,
-    width: `calc(100% - ${drawerWidth}px)`,
-    transition: theme.transitions.create(["width", "margin"], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-  }),
-}));
-
 const Drawer = styled(MuiDrawer, {
   shouldForwardProp: (prop) => prop !== "open",
 })(({ theme, open }) => ({
@@ -103,27 +86,20 @@ export default function Sidebar() {
     setOpen(false);
   };
 
+  function scrollToComponent(componentId) {
+    const component = document.getElementById(componentId);
+    if (component) {
+      component.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+        inline: "nearest",
+      });
+    }
+  }
+
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar open={open}>
-        <Toolbar>
-          {/* 3 */}
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            sx={{
-              color: "gray ",
-              marginRight: 5,
-              ...(open && { display: "none" }),
-            }}
-          >
-            <MenuIcon />
-          </IconButton>
-        </Toolbar>
-      </AppBar>
       <Drawer variant="permanent" open={open}>
         <DrawerHeader>
           {open ? (
@@ -131,64 +107,102 @@ export default function Sidebar() {
               <ChevronLeftIcon />
             </IconButton>
           ) : (
-            ""
+            <Toolbar>
+              <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                onClick={handleDrawerOpen}
+                edge="start"
+                sx={{
+                  color: "gray ",
+                  marginLeft: "50%",
+                  ...(open && { display: "none" }),
+                }}
+              >
+                <MenuIcon />
+              </IconButton>
+            </Toolbar>
           )}
         </DrawerHeader>
         <Divider />
         <List>
-          {["Home", "About", "Services", "Testimonial", "Blog", "Contact"].map(
-            (text, index) => {
-              let iconComponent;
-              switch (text) {
-                case "Home":
-                  iconComponent = <HomeIcon />;
-                  break;
-                case "About":
-                  iconComponent = <InfoIcon />;
-                  break;
-                case "Services":
-                  iconComponent = <WorkIcon />;
-                  break;
-                case "Testimonial":
-                  iconComponent = <ChatIcon />;
-                  break;
-                case "Blog":
-                  iconComponent = <BookIcon />;
-                  break;
-                case "Contact":
-                  iconComponent = <ContactMailIcon />;
-                  break;
-                default:
-                  iconComponent = <InboxIcon />;
-                  break;
-              }
-              return (
-                <ListItem key={text} disablePadding sx={{ display: "block" }}>
-                  <ListItemButton
+          {[
+            "Auto Service",
+            "Our Services",
+            "Choose Us",
+            "Response",
+            "Contact Us",
+            "Location",
+          ].map((text, index) => {
+            let iconComponent;
+            switch (text) {
+              case "Auto Service":
+                iconComponent = (
+                  <CarRepairIcon
+                    onClick={() => scrollToComponent("auto-service")}
+                  />
+                );
+                break;
+              case "Our Services":
+                iconComponent = (
+                  <HomeRepairServiceIcon
+                    onClick={() => scrollToComponent("our_services")}
+                  />
+                );
+                break;
+              case "Choose Us":
+                iconComponent = (
+                  <AccessibilityNewIcon
+                    onClick={() => scrollToComponent("choose")}
+                  />
+                );
+                break;
+              case "Response":
+                iconComponent = (
+                  <MiscellaneousServicesIcon
+                    onClick={() => scrollToComponent("customer_response")}
+                  />
+                );
+                break;
+              case "Contact Us":
+                iconComponent = (
+                  <ChatIcon onClick={() => scrollToComponent("contact_us")} />
+                );
+                break;
+              case "Location":
+                iconComponent = (
+                  <LocationOnIcon
+                    onClick={() => scrollToComponent("location")}
+                  />
+                );
+                break;
+              default:
+                iconComponent = <ErrorOutlineIcon />;
+                break;
+            }
+            return (
+              <ListItem key={text} disablePadding sx={{ display: "block" }}>
+                <ListItemButton
+                  sx={{
+                    minHeight: 48,
+                    justifyContent: open ? "initial" : "center",
+                    px: 2.5,
+                  }}
+                >
+                  <ListItemIcon
                     sx={{
-                      minHeight: 48,
-                      justifyContent: open ? "initial" : "center",
-                      px: 2.5,
+                      minWidth: 0,
+                      mr: open ? 3 : "auto",
+                      justifyContent: "center",
                     }}
                   >
-                    <ListItemIcon
-                      sx={{
-                        minWidth: 0,
-                        mr: open ? 3 : "auto",
-                        justifyContent: "center",
-                      }}
-                    >
-                      {iconComponent}
-                    </ListItemIcon>
-                    <ListItemText
-                      primary={text}
-                      sx={{ opacity: open ? 1 : 0 }}
-                    />
-                  </ListItemButton>
-                </ListItem>
-              );
-            }
-          )}
+                    {iconComponent}
+                  </ListItemIcon>
+                  <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
+                </ListItemButton>
+              </ListItem>
+            );
+          })}
         </List>
       </Drawer>
     </Box>

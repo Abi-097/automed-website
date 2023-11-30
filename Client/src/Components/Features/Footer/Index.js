@@ -31,7 +31,7 @@ const Footer = ({ center, zoom }) => {
   };
 
   return (
-    <footer>
+    <footer id="location">
       <Box className="main_box">
         <img
           src={logo}

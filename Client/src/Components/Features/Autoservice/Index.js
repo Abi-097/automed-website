@@ -1,11 +1,12 @@
 import Grid from "@mui/material/Grid";
-import React from "react";
+import React, { useRef } from "react";
 import "./Style.css";
 import CustomButton from "../../Component/Button/Index";
 import image from "../../Images/imf.png";
+
 const AutoService = () => {
   return (
-    <div>
+    <div id="auto-service">
       <Grid container sx={{ mt: 17 }}>
         <Grid item lg={6} md={6} xs={12}>
           <img src={image} width="100%" />
@@ -32,7 +33,7 @@ const AutoService = () => {
             />{" "}
             &nbsp;
             <CustomButton
-              text="Contact Us"
+              text="Read More"
               background="white"
               hoverTextColor="white"
               hoverBackground="#636c9a"

@@ -15,9 +15,9 @@ const CustomButton = ({
   hoverTextColor,
 }) => {
   const buttonStyle = {
-    height: height || "66px",
-    borderRadius: borderRadius || "45px",
-    width: width || "150px",
+    height: height || "40px",
+    borderRadius: borderRadius || "50px",
+    width: width || "120px",
     background: background || "#ff8f81",
     color: textColor || "white",
     transition: "background-color 1s",

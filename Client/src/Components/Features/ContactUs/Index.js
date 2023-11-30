@@ -56,7 +56,7 @@ const ContactUs = () => {
   };
 
   return (
-    <div>
+    <div id="contact_us">
       <div className="contact_heading">
         <img src={headicon} alt="headicon" />
         <h2>REQUEST A CALL BACK</h2>

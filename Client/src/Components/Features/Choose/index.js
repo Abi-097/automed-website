@@ -7,7 +7,7 @@ import Slider from "@mui/material/Slider";
 import Box from "@mui/material/Box";
 const Choose = () => {
   return (
-    <div>
+    <div id="choose">
       <Grid
         container
         sx={{

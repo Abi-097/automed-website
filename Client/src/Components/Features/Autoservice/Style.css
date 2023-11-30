@@ -12,6 +12,10 @@
     background-image: url("../../Images/square.JPG");
   }
 }
+
+.auto_content {
+  color: aliceblue;
+}
 .auto_content > p {
   margin-left: 15%;
   margin-right: 10%;
