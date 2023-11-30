@@ -1,5 +1,5 @@
 import Grid from "@mui/material/Grid";
-import React, { useRef } from "react";
+import React from "react";
 import "./Style.css";
 import CustomButton from "../../Component/Button/Index";
 import image from "../../Images/imf.png";
