@@ -3,21 +3,16 @@ import React from "react";
 import "./Style.css";
 import CustomButton from "../../Component/Button/Index";
 import image from "../../Images/imf.png";
-import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 const AutoService = () => {
-  const navigate = useNavigate();
-
   const ClickButton = () => {
     const email = "demo@gmail.com";
     window.location.href = `mailto:${email}`;
   };
 
-  // const navigate = useNavigate();
-
-  const handleButtonClick = () => {
-    navigate("/page-under-construction");
+  const handleClick = () => {
+    Swal.fire("AUTO SERVICES");
   };
-
   return (
     <div id="auto-service">
       <Grid container sx={{ mt: 17 }}>
@@ -52,8 +47,8 @@ const AutoService = () => {
               hoverTextColor="white"
               hoverBackground="#636c9a"
               textColor="#000"
-              onClick={handleButtonClick}
-              navigate={navigate}
+              onClick={handleClick}
+              // to={navigate}
             />
           </div>
         </Grid>

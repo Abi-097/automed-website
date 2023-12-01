@@ -29,20 +29,16 @@ const CustomButton = ({
   };
   return (
     <>
-      <Link
-        to={to}
-        style={{
-          textDecoration: "none",
-        }}
-      />
-      <Button
-        variant={variant}
-        color={color}
-        onClick={onClick}
-        sx={buttonStyle}
-      >
-        {text}
-      </Button>
+      <Link to={to} style={{ textDecoration: "none" }}>
+        <Button
+          variant={variant}
+          color={color}
+          onClick={onClick}
+          sx={buttonStyle}
+        >
+          {text}
+        </Button>
+      </Link>
     </>
   );
 };

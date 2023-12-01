@@ -115,7 +115,7 @@ const Footer = ({ center, zoom }) => {
                   border: "4px solid white",
                 }}
               >
-                <FontAwesomeIcon icon={faMagnifyingGlass} />
+                Subscribe
               </Button>
             </Box>
           </Grid>

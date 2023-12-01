@@ -1,11 +1,11 @@
 import React from "react";
-
-const pageUConstruction = () => {
+import { Router, Route, Routes } from "react-router-dom";
+const OnConstruction = () => {
   return (
     <div>
-      <h1> Page Under Construction !!!</h1>
+      <h1>Page Under Construction</h1>
     </div>
   );
 };
 
-export default pageUConstruction;
+export default OnConstruction;

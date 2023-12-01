@@ -7,8 +7,13 @@ import cho4 from "../../Images/cho4.png";
 import logo from "../../Images/heading.png";
 import "./Style.css";
 import CustomButton from "../../Component/Button/Index";
-
+import Swal from "sweetalert2";
 const Services = () => {
+  const handleClick = () => {
+    Swal.fire(
+      "Scontent of a page when looking at its layout. The point of using Lorem Ipsum"
+    );
+  };
   return (
     <div id="our_services">
       <Box sx={{ mt: 3 }}>
@@ -49,6 +54,7 @@ const Services = () => {
               text="Read More"
               background="#636c9a"
               hoverBackground="#ff8f81"
+              onClick={handleClick}
             />
           </Grid>
 
@@ -75,6 +81,7 @@ const Services = () => {
               text="Read More"
               background="#636c9a"
               hoverBackground="#ff8f81"
+              onClick={handleClick}
             />
           </Grid>
 
@@ -101,6 +108,7 @@ const Services = () => {
               text="Read More"
               background="#636c9a"
               hoverBackground="#ff8f81"
+              onClick={handleClick}
             />
           </Grid>
 
@@ -127,6 +135,7 @@ const Services = () => {
               text="Read More"
               background="#636c9a"
               hoverBackground="#ff8f81"
+              onClick={handleClick}
             />
           </Grid>
         </Grid>

@@ -36,6 +36,19 @@ const Navbar = () => {
     fontSize: "14px",
   };
 
+  const scrollToElement = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleButtonClick = () => {
+    scrollToElement("auto-service");
+    scrollToElement("choose");
+    scrollToElement("contact_us");
+    scrollToElement("footer");
+  };
   return (
     <div>
       <nav style={navbarStyle}>
@@ -78,7 +91,12 @@ const Navbar = () => {
             </a>
           </div>
           <div style={navbarItemStyle}>
-            <Box display="flex" backgroundColor={"#858585"} borderRadius={2}>
+            <Box
+              display="flex"
+              backgroundColor={"#858585"}
+              borderRadius={2}
+              id="myBox"
+            >
               <InputBase
                 sx={{
                   ml: 2,
@@ -87,7 +105,11 @@ const Navbar = () => {
                 }}
                 placeholder="Search"
               />
-              <IconButton type="button" sx={{ p: 1 }}>
+              <IconButton
+                type="button"
+                sx={{ p: 1 }}
+                onClick={handleButtonClick}
+              >
                 <FontAwesomeIcon icon={faMagnifyingGlass} />
               </IconButton>
             </Box>
